@@ -1,0 +1,173 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#btn-add {
+  margin-top: 5%;
+}
+
+.container {
+  width: 100%;
+  margin-top: 3%;
+  display: flex;
+  font-size: 20px;
+  font-weight: 700;
+  align-items: center;
+}
+
+.namesList > div:nth-child(odd) {
+  background: #e0e0e0;
+}
+
+.container hr {
+  border: 2px solid #000;
+  width: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.namesList {
+  border: 2px solid #000;
+}
+
+.names_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 350px;
+  padding: 0 10px;
+}
+
+.names_container button {
+  background-color: #fff;
+  border: 1px solid #000;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0);
+  cursor: pointer;
+}
+
+.form_styles button {
+  background-color: #fff;
+  border: 1px solid #000;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0);
+  cursor: pointer;
+  float: right;
+}
+
+.scores button {
+  background-color: #fff;
+  border: 1px solid #000;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0);
+  cursor: pointer;
+}
+
+.scores {
+  margin-left: 5%;
+}
+
+.scoreSection {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5%;
+  align-items: center;
+}
+
+.container h2 {
+  font-size: 20px;
+}
+
+.form_styles h2 {
+  font-size: 20px;
+}
+
+.form_styles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 4%;
+}
+
+.form_styles input {
+  width: 100%;
+  border: 2px solid #000;
+}
+
+.names_container p {
+  font-size: 12px;
+}
+
+.top-section {
+  justify-content: space-between;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+}
+
+.main-menu ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.main-menu li {
+  font-size: 16px;
+  font-weight: 700;
+  margin-right: 12px;
+}
+
+.footer-section {
+  padding: 0 10px;
+  border: 2px solid #000;
+  display: flex;
+  align-items: center;
+  margin-top: 15%;
+}
+
+.main-menu hr {
+  border: 2px solid #000;
+  height: 50%;
+}
+
+.dates p {
+  float: right;
+}
+
+.footer-section h2 {
+  margin: 0;
+}
+
+.main-content {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+#date {
+  text-align: right;
+}
+
+.main-list li:nth-child(2) {
+  border-right: 2px black solid;
+  border-left: 2px black solid;
+  padding: 0 10px 0 10px;
+}
+
+li a {
+  text-decoration: none;
+}
+
+.contacts {
+  justify-content: center;
+  text-align: center;
+}
