@@ -1,6 +1,6 @@
 import './styles/style.css';
 import refreshButton from './modules/apiCall.js';
-import addScore from './modules/addData';
+import addScore from './modules/addData.js';
 
 const refreshData = document.getElementById('btn-add');
 refreshData.addEventListener('click', refreshButton);

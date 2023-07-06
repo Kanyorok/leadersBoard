@@ -8,7 +8,7 @@ const createTask = (info) => {
     const taskComponent = document.createElement('div');
     taskComponent.classList.add('names_container');
     const paragraph = document.createElement('p');
-    taskComponent.appendChild(paragraph)
+    taskComponent.appendChild(paragraph);
     paragraph.innerHTML = `${score.user}: ${score.score}`;
     taskContainer.appendChild(taskComponent);
   });
