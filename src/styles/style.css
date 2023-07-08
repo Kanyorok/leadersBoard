@@ -18,10 +18,6 @@ body {
   align-items: center;
 }
 
-.namesList > div:nth-child(odd) {
-  background: #e0e0e0;
-}
-
 .container hr {
   border: 2px solid #000;
   width: 50px;
@@ -31,6 +27,9 @@ body {
 
 .namesList {
   border: 2px solid #000;
+  height: 300px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .names_container {
@@ -41,14 +40,23 @@ body {
   padding: 0 10px;
 }
 
-.names_container button {
-  background-color: #fff;
-  border: 1px solid #000;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 5px;
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0);
-  cursor: pointer;
+th {
+  padding: 8px 15px;
+  border: 2px solid #529432;
+  background: #abdd93;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+}
+
+tbody > tr:nth-child(odd) {
+  background: #e0e0e0;
+}
+
+tbody > tr:nth-child(even) {
+  background: #fff;
 }
 
 .form_styles button {
@@ -74,6 +82,7 @@ body {
 
 .scores {
   margin-left: 5%;
+  position: relative;
 }
 
 .scoreSection {
@@ -151,23 +160,6 @@ body {
   padding: 30px;
   display: flex;
   flex-direction: column;
-}
-
-#date {
-  text-align: right;
-}
-
-.main-list li:nth-child(2) {
-  border-right: 2px black solid;
-  border-left: 2px black solid;
-  padding: 0 10px 0 10px;
-}
-
-li a {
-  text-decoration: none;
-}
-
-.contacts {
-  justify-content: center;
-  text-align: center;
+  background-image: url('../assets/images/chess_bg.jpg');
+  background-size: cover;
 }
