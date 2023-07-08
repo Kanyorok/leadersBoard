@@ -42,8 +42,8 @@ var addScore = /*#__PURE__*/function () {
           });
         case 9:
           finResponse = _context.sent;
-          valUser = '';
-          valScore = '';
+          valUser.value = '';
+          valScore.value = '';
           _context.next = 14;
           return finResponse.json();
         case 14:
@@ -100,17 +100,16 @@ var refreshButton = /*#__PURE__*/function () {
         case 6:
           retrievedData = _context.sent;
           (0,_displayList_js__WEBPACK_IMPORTED_MODULE_0__["default"])(retrievedData.result);
-          _context.next = 13;
-          break;
-        case 10:
-          _context.prev = 10;
+          return _context.abrupt("return", null);
+        case 11:
+          _context.prev = 11;
           _context.t0 = _context["catch"](0);
           return _context.abrupt("return", _context.t0);
-        case 13:
+        case 14:
         case "end":
           return _context.stop();
       }
-    }, _callee, null, [[0, 10]]);
+    }, _callee, null, [[0, 11]]);
   }));
   return function refreshButton() {
     return _ref.apply(this, arguments);
@@ -136,12 +135,35 @@ var createTask = function createTask(info) {
   var actionTask = info;
   taskContainer.innerHTML = '';
   actionTask.forEach(function (score) {
+    var tableDesign = document.createElement('table');
+    var tHead = document.createElement('thead');
+    var tBody = document.createElement('tbody');
+    tableDesign.append(tHead);
+    var trow = document.createElement('tr');
+    tHead.appendChild(trow);
+    var tData1 = document.createElement('th');
+    var tData2 = document.createElement('th');
+    trow.appendChild(tData1);
+    trow.appendChild(tData2);
+    tData1.innerHTML = 'User Name';
+    tData2.innerHTML = 'Points';
+    tableDesign.append(tBody);
+    var tBodyRow = document.createElement('tr');
+    tBody.appendChild(tBodyRow);
+    var tBodyData1 = document.createElement('td');
+    var tBodyData2 = document.createElement('td');
+    tBodyRow.appendChild(tBodyData1);
+    tBodyRow.appendChild(tBodyData2);
     var taskComponent = document.createElement('div');
     taskComponent.classList.add('names_container');
     var paragraph = document.createElement('p');
-    taskComponent.appendChild(paragraph);
-    paragraph.innerHTML = "".concat(score.user, ": ").concat(score.score);
-    taskContainer.appendChild(taskComponent);
+    var paragraph1 = document.createElement('p');
+    taskComponent.appendChild(tBody);
+    tBodyData1.appendChild(paragraph);
+    paragraph.innerHTML = "".concat(score.user);
+    tBodyData2.appendChild(paragraph1);
+    paragraph1.innerHTML = "".concat(score.score);
+    taskContainer.appendChild(tableDesign);
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createTask);
@@ -200,6 +222,9 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
 
 .namesList {
   border: 2px solid #000;
+  height: 300px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .names_container {
@@ -243,6 +268,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
 
 .scores {
   margin-left: 5%;
+  position: relative;
 }
 
 .scoreSection {
@@ -340,7 +366,7 @@ li a {
   justify-content: center;
   text-align: center;
 }
-`, "",{"version":3,"sources":["webpack://./src/styles/style.css"],"names":[],"mappings":"AAAA;EACE,4DAA4D;EAC5D,SAAS;EACT,UAAU;EACV,sBAAsB;AACxB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,WAAW;EACX,cAAc;EACd,aAAa;EACb,eAAe;EACf,gBAAgB;EAChB,mBAAmB;AACrB;;AAEA;EACE,mBAAmB;AACrB;;AAEA;EACE,sBAAsB;EACtB,WAAW;EACX,gBAAgB;EAChB,mBAAmB;AACrB;;AAEA;EACE,sBAAsB;AACxB;;AAEA;EACE,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;EACnB,YAAY;EACZ,eAAe;AACjB;;AAEA;EACE,sBAAsB;EACtB,sBAAsB;EACtB,eAAe;EACf,gBAAgB;EAChB,YAAY;EACZ,yCAAyC;EACzC,eAAe;AACjB;;AAEA;EACE,sBAAsB;EACtB,sBAAsB;EACtB,eAAe;EACf,gBAAgB;EAChB,YAAY;EACZ,yCAAyC;EACzC,eAAe;EACf,YAAY;AACd;;AAEA;EACE,sBAAsB;EACtB,sBAAsB;EACtB,eAAe;EACf,gBAAgB;EAChB,YAAY;EACZ,yCAAyC;EACzC,eAAe;AACjB;;AAEA;EACE,eAAe;AACjB;;AAEA;EACE,aAAa;EACb,8BAA8B;EAC9B,iBAAiB;EACjB,mBAAmB;AACrB;;AAEA;EACE,eAAe;AACjB;;AAEA;EACE,eAAe;AACjB;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,mBAAmB;EACnB,eAAe;AACjB;;AAEA;EACE,WAAW;EACX,sBAAsB;AACxB;;AAEA;EACE,eAAe;AACjB;;AAEA;EACE,8BAA8B;EAC9B,eAAe;EACf,aAAa;EACb,mBAAmB;AACrB;;AAEA;EACE,qBAAqB;EACrB,aAAa;EACb,6BAA6B;AAC/B;;AAEA;EACE,eAAe;EACf,gBAAgB;EAChB,kBAAkB;AACpB;;AAEA;EACE,eAAe;EACf,sBAAsB;EACtB,aAAa;EACb,mBAAmB;EACnB,eAAe;AACjB;;AAEA;EACE,sBAAsB;EACtB,WAAW;AACb;;AAEA;EACE,YAAY;AACd;;AAEA;EACE,SAAS;AACX;;AAEA;EACE,aAAa;EACb,aAAa;EACb,sBAAsB;AACxB;;AAEA;EACE,iBAAiB;AACnB;;AAEA;EACE,6BAA6B;EAC7B,4BAA4B;EAC5B,sBAAsB;AACxB;;AAEA;EACE,qBAAqB;AACvB;;AAEA;EACE,uBAAuB;EACvB,kBAAkB;AACpB","sourcesContent":["body {\r\n  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\n#btn-add {\r\n  margin-top: 5%;\r\n}\r\n\r\n.container {\r\n  width: 100%;\r\n  margin-top: 3%;\r\n  display: flex;\r\n  font-size: 20px;\r\n  font-weight: 700;\r\n  align-items: center;\r\n}\r\n\r\n.namesList > div:nth-child(odd) {\r\n  background: #e0e0e0;\r\n}\r\n\r\n.container hr {\r\n  border: 2px solid #000;\r\n  width: 50px;\r\n  margin-top: 20px;\r\n  margin-bottom: 20px;\r\n}\r\n\r\n.namesList {\r\n  border: 2px solid #000;\r\n}\r\n\r\n.names_container {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  width: 350px;\r\n  padding: 0 10px;\r\n}\r\n\r\n.names_container button {\r\n  background-color: #fff;\r\n  border: 1px solid #000;\r\n  font-size: 12px;\r\n  font-weight: 700;\r\n  padding: 5px;\r\n  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0);\r\n  cursor: pointer;\r\n}\r\n\r\n.form_styles button {\r\n  background-color: #fff;\r\n  border: 1px solid #000;\r\n  font-size: 12px;\r\n  font-weight: 700;\r\n  padding: 5px;\r\n  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0);\r\n  cursor: pointer;\r\n  float: right;\r\n}\r\n\r\n.scores button {\r\n  background-color: #fff;\r\n  border: 1px solid #000;\r\n  font-size: 12px;\r\n  font-weight: 700;\r\n  padding: 5px;\r\n  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0);\r\n  cursor: pointer;\r\n}\r\n\r\n.scores {\r\n  margin-left: 5%;\r\n}\r\n\r\n.scoreSection {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  margin-bottom: 5%;\r\n  align-items: center;\r\n}\r\n\r\n.container h2 {\r\n  font-size: 20px;\r\n}\r\n\r\n.form_styles h2 {\r\n  font-size: 20px;\r\n}\r\n\r\n.form_styles {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  margin-left: 4%;\r\n}\r\n\r\n.form_styles input {\r\n  width: 100%;\r\n  border: 2px solid #000;\r\n}\r\n\r\n.names_container p {\r\n  font-size: 12px;\r\n}\r\n\r\n.top-section {\r\n  justify-content: space-between;\r\n  padding: 0 15px;\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.main-menu ul {\r\n  list-style-type: none;\r\n  display: flex;\r\n  justify-content: space-evenly;\r\n}\r\n\r\n.main-menu li {\r\n  font-size: 16px;\r\n  font-weight: 700;\r\n  margin-right: 12px;\r\n}\r\n\r\n.footer-section {\r\n  padding: 0 10px;\r\n  border: 2px solid #000;\r\n  display: flex;\r\n  align-items: center;\r\n  margin-top: 15%;\r\n}\r\n\r\n.main-menu hr {\r\n  border: 2px solid #000;\r\n  height: 50%;\r\n}\r\n\r\n.dates p {\r\n  float: right;\r\n}\r\n\r\n.footer-section h2 {\r\n  margin: 0;\r\n}\r\n\r\n.main-content {\r\n  padding: 30px;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n#date {\r\n  text-align: right;\r\n}\r\n\r\n.main-list li:nth-child(2) {\r\n  border-right: 2px black solid;\r\n  border-left: 2px black solid;\r\n  padding: 0 10px 0 10px;\r\n}\r\n\r\nli a {\r\n  text-decoration: none;\r\n}\r\n\r\n.contacts {\r\n  justify-content: center;\r\n  text-align: center;\r\n}\r\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/styles/style.css"],"names":[],"mappings":"AAAA;EACE,4DAA4D;EAC5D,SAAS;EACT,UAAU;EACV,sBAAsB;AACxB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,WAAW;EACX,cAAc;EACd,aAAa;EACb,eAAe;EACf,gBAAgB;EAChB,mBAAmB;AACrB;;AAEA;EACE,mBAAmB;AACrB;;AAEA;EACE,sBAAsB;EACtB,WAAW;EACX,gBAAgB;EAChB,mBAAmB;AACrB;;AAEA;EACE,sBAAsB;EACtB,aAAa;EACb,kBAAkB;EAClB,gBAAgB;AAClB;;AAEA;EACE,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;EACnB,YAAY;EACZ,eAAe;AACjB;;AAEA;EACE,sBAAsB;EACtB,sBAAsB;EACtB,eAAe;EACf,gBAAgB;EAChB,YAAY;EACZ,yCAAyC;EACzC,eAAe;AACjB;;AAEA;EACE,sBAAsB;EACtB,sBAAsB;EACtB,eAAe;EACf,gBAAgB;EAChB,YAAY;EACZ,yCAAyC;EACzC,eAAe;EACf,YAAY;AACd;;AAEA;EACE,sBAAsB;EACtB,sBAAsB;EACtB,eAAe;EACf,gBAAgB;EAChB,YAAY;EACZ,yCAAyC;EACzC,eAAe;AACjB;;AAEA;EACE,eAAe;EACf,kBAAkB;AACpB;;AAEA;EACE,aAAa;EACb,8BAA8B;EAC9B,iBAAiB;EACjB,mBAAmB;AACrB;;AAEA;EACE,eAAe;AACjB;;AAEA;EACE,eAAe;AACjB;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,mBAAmB;EACnB,eAAe;AACjB;;AAEA;EACE,WAAW;EACX,sBAAsB;AACxB;;AAEA;EACE,eAAe;AACjB;;AAEA;EACE,8BAA8B;EAC9B,eAAe;EACf,aAAa;EACb,mBAAmB;AACrB;;AAEA;EACE,qBAAqB;EACrB,aAAa;EACb,6BAA6B;AAC/B;;AAEA;EACE,eAAe;EACf,gBAAgB;EAChB,kBAAkB;AACpB;;AAEA;EACE,eAAe;EACf,sBAAsB;EACtB,aAAa;EACb,mBAAmB;EACnB,eAAe;AACjB;;AAEA;EACE,sBAAsB;EACtB,WAAW;AACb;;AAEA;EACE,YAAY;AACd;;AAEA;EACE,SAAS;AACX;;AAEA;EACE,aAAa;EACb,aAAa;EACb,sBAAsB;AACxB;;AAEA;EACE,iBAAiB;AACnB;;AAEA;EACE,6BAA6B;EAC7B,4BAA4B;EAC5B,sBAAsB;AACxB;;AAEA;EACE,qBAAqB;AACvB;;AAEA;EACE,uBAAuB;EACvB,kBAAkB;AACpB","sourcesContent":["body {\r\n  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\n#btn-add {\r\n  margin-top: 5%;\r\n}\r\n\r\n.container {\r\n  width: 100%;\r\n  margin-top: 3%;\r\n  display: flex;\r\n  font-size: 20px;\r\n  font-weight: 700;\r\n  align-items: center;\r\n}\r\n\r\n.namesList > div:nth-child(odd) {\r\n  background: #e0e0e0;\r\n}\r\n\r\n.container hr {\r\n  border: 2px solid #000;\r\n  width: 50px;\r\n  margin-top: 20px;\r\n  margin-bottom: 20px;\r\n}\r\n\r\n.namesList {\r\n  border: 2px solid #000;\r\n  height: 300px;\r\n  overflow-x: hidden;\r\n  overflow-y: auto;\r\n}\r\n\r\n.names_container {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  width: 350px;\r\n  padding: 0 10px;\r\n}\r\n\r\n.names_container button {\r\n  background-color: #fff;\r\n  border: 1px solid #000;\r\n  font-size: 12px;\r\n  font-weight: 700;\r\n  padding: 5px;\r\n  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0);\r\n  cursor: pointer;\r\n}\r\n\r\n.form_styles button {\r\n  background-color: #fff;\r\n  border: 1px solid #000;\r\n  font-size: 12px;\r\n  font-weight: 700;\r\n  padding: 5px;\r\n  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0);\r\n  cursor: pointer;\r\n  float: right;\r\n}\r\n\r\n.scores button {\r\n  background-color: #fff;\r\n  border: 1px solid #000;\r\n  font-size: 12px;\r\n  font-weight: 700;\r\n  padding: 5px;\r\n  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0);\r\n  cursor: pointer;\r\n}\r\n\r\n.scores {\r\n  margin-left: 5%;\r\n  position: relative;\r\n}\r\n\r\n.scoreSection {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  margin-bottom: 5%;\r\n  align-items: center;\r\n}\r\n\r\n.container h2 {\r\n  font-size: 20px;\r\n}\r\n\r\n.form_styles h2 {\r\n  font-size: 20px;\r\n}\r\n\r\n.form_styles {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  margin-left: 4%;\r\n}\r\n\r\n.form_styles input {\r\n  width: 100%;\r\n  border: 2px solid #000;\r\n}\r\n\r\n.names_container p {\r\n  font-size: 12px;\r\n}\r\n\r\n.top-section {\r\n  justify-content: space-between;\r\n  padding: 0 15px;\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.main-menu ul {\r\n  list-style-type: none;\r\n  display: flex;\r\n  justify-content: space-evenly;\r\n}\r\n\r\n.main-menu li {\r\n  font-size: 16px;\r\n  font-weight: 700;\r\n  margin-right: 12px;\r\n}\r\n\r\n.footer-section {\r\n  padding: 0 10px;\r\n  border: 2px solid #000;\r\n  display: flex;\r\n  align-items: center;\r\n  margin-top: 15%;\r\n}\r\n\r\n.main-menu hr {\r\n  border: 2px solid #000;\r\n  height: 50%;\r\n}\r\n\r\n.dates p {\r\n  float: right;\r\n}\r\n\r\n.footer-section h2 {\r\n  margin: 0;\r\n}\r\n\r\n.main-content {\r\n  padding: 30px;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n#date {\r\n  text-align: right;\r\n}\r\n\r\n.main-list li:nth-child(2) {\r\n  border-right: 2px black solid;\r\n  border-left: 2px black solid;\r\n  padding: 0 10px 0 10px;\r\n}\r\n\r\nli a {\r\n  text-decoration: none;\r\n}\r\n\r\n.contacts {\r\n  justify-content: center;\r\n  text-align: center;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -881,4 +907,4 @@ form.addEventListener('submit', _modules_addData_js__WEBPACK_IMPORTED_MODULE_2__
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle117f93dd21bcdf9dfdb4.js.map
+//# sourceMappingURL=bundle0f0bd4adadf0d4575e23.js.map

@@ -1,7 +1,7 @@
 const addScore = async (e) => {
   e.preventDefault();
-  let valUser = document.querySelector('.user-name');
-  let valScore = document.querySelector('.user-score');
+  const valUser = document.querySelector('.user-name');
+  const valScore = document.querySelector('.user-score');
   const itemUserVal = valUser.value;
   const itemUserScore = valScore.value;
   const apiData = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/Al4d7IVkemOTTV/scores/';
@@ -14,8 +14,8 @@ const addScore = async (e) => {
       body: JSON.stringify({ user: itemUserVal, score: itemUserScore }),
     });
 
-    valUser = '';
-    valScore = '';
+    valUser.value = '';
+    valScore.value = '';
     const retrievedData = await finResponse.json();
     return retrievedData;
   } catch (error) {
