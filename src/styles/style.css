@@ -162,4 +162,5 @@ tbody > tr:nth-child(even) {
   flex-direction: column;
   background-image: url('../assets/images/chess_bg.jpg');
   background-size: cover;
+  height: 100vh;
 }
